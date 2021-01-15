@@ -2,7 +2,7 @@ name: Create Alpha Tag
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   setup:
     name: Checkout | Setup NodeJs | Create tag | Push to github
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-            ref: master
+            ref: main
             fetch-depth: 0
       - name: Setup NodeJS
         uses: actions/setup-node@v2
@@ -27,4 +27,4 @@ jobs:
         env:
           GITHUB_PERSONAL_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Update git origin
-        run: git push --follow-tags origin master
+        run: git push --follow-tags origin main
