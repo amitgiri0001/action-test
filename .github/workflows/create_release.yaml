@@ -1,6 +1,10 @@
 name: Manual Create Release
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag'
+        required: true
 jobs:
   setup:
     name: Prepare Tag and Release
@@ -15,6 +19,8 @@ jobs:
         uses: mathieudutour/github-tag-action@v5.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: false
+          custom_tag: ${{ github.event.inputs.tag }}
       - run: |
           echo "New tag/Release ${{ steps.tag_version.outputs.new_tag }}!"
           echo "Body ${{ steps.tag_version.outputs.changelog }}!"
