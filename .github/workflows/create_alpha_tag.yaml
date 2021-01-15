@@ -1,0 +1,30 @@
+name: Create Alpha Tag
+on:
+  push:
+    branches:
+      - master
+jobs:
+  setup:
+    name: Checkout | Setup NodeJs | Create tag | Push to github
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+            ref: master
+            fetch-depth: 0
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+          check-latest: true
+      - name: Set git config
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+      - name: Update Changelog.md | Create tag
+        run: npx standard-version -p alpha --release-as minor
+        env:
+          GITHUB_PERSONAL_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Update git origin
+        run: git push --follow-tags origin master
