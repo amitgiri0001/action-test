@@ -1,0 +1,28 @@
+name: Create Release Tag
+on:
+  workflow_dispatch:
+jobs:
+  setup:
+    name: Create release tag
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+            ref: main
+            fetch-depth: 0
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+          check-latest: true
+      - name: Set git config
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+      - name: Update Changelog.md | Create release tag
+        run: npx standard-version
+        env:
+          GITHUB_PERSONAL_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Update git origin
+        run: git push --follow-tags origin main
