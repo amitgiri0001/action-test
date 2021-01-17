@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0-alpha.2](https://github.com/amitgiri0001/action-test/compare/v1.2.0-alpha.1...v1.2.0-alpha.2) (2021-01-17)
+
+
+### Features
+
+* **github:** adds action ([b3f2dce](https://github.com/amitgiri0001/action-test/commit/b3f2dce5547a38111bad88e75517349b5bc7afe3))
+
 ## [1.2.0-alpha.1](https://github.com/amitgiri0001/action-test/compare/v1.2.0-alpha.0...v1.2.0-alpha.1) (2021-01-17)
 
 
