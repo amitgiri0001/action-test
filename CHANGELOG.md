@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-alpha.4](https://github.com/amitgiri0001/action-test/compare/v1.1.0...v1.1.0-alpha.4) (2021-01-17)
+
+
+### Features
+
+* **github:** adds action ([18c53b1](https://github.com/amitgiri0001/action-test/commit/18c53b1867fd93cf861a9ec0aa3a7b5e2258ec4b))
+
 ## [1.1.0-alpha.3](https://github.com/amitgiri0001/action-test/compare/v1.1.0-alpha.2...v1.1.0-alpha.3) (2021-01-15)
 
 
