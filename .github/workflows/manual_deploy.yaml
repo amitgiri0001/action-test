@@ -6,6 +6,10 @@ jobs:
     name: Deploy latest commit
     runs-on: ubuntu-latest
     steps:
+    - name: show val
+      run: |
+        echo ${{ secrets.SSH_USERNAME }}
+        echo ${{ secrets.QA_HOST }}
     - name: SSH and deploy node app
       uses: appleboy/ssh-action@master
       with:
