@@ -17,3 +17,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_SECRET }}
         script: whoami
+
+# The ssh won't work since the VPN is blocking it. 
+# May be a webhook it or some cron job will work ?
+# However the other two jobs works well.

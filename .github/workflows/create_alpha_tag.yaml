@@ -2,7 +2,7 @@ name: Create Alpha Tag
 on:
   push:
     branches:
-      - main
+      - release/*
 jobs:
   setup:
     name: Checkout | Setup NodeJs | Create tag | Push to github
@@ -12,12 +12,10 @@ jobs:
         uses: actions/checkout@v2
         with:
             ref: main
-            fetch-depth: 0
       - name: Setup NodeJS
         uses: actions/setup-node@v2
         with:
           node-version: '12'
-          check-latest: true
       - name: Set git config
         run: |
           git config user.name github-actions
